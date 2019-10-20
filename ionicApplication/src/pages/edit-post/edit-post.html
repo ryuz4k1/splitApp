@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="myColor">
+    <ion-buttons start left>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Edit Post</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="updatePost()">
+        <ion-icon name="checkmark" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+    <ion-label position="fixed"><h3>Title : </h3></ion-label>
+    <ion-input no-margin no-padding class="info-text" [(ngModel)]="title"></ion-input>
+    <hr class="custom-hr" color="gray">
+  </div>
+
+  <br>
+
+  <div no-border>
+    <ion-label position="fixed"><h3>Body : </h3></ion-label>
+    <ion-textarea [(ngModel)]="body" class="textKutu"></ion-textarea>
+  </div>
+
+  <br>
+
+
+
+</ion-content>

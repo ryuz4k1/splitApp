@@ -1,0 +1,44 @@
+page-edit-profile {
+
+  .edit-avatar {
+    border-radius: 100%;
+    width: 25%;
+  }
+
+  .change-text {
+    font-size: 13px;
+    color: #659CF2;
+  }
+
+  .info-text {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .custom-hr {
+    height: 3px;
+  }
+
+  .custom-select {
+    margin-left: 15px;
+    position: absolute;
+  }
+
+  .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #ffffff;
+    background-color: rgba(158, 158, 158, 0.2);
+  }
+
+  .icon-md-primary {
+    color: #ffffff;
+  }
+
+  .bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+    color: #ffffff;
+    background-color: rgba(158, 158, 158, 0.2);
+  }
+
+  .icon-ios-primary {
+    color: #ffffff;
+  }
+
+}

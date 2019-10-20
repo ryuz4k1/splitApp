@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="myWhite">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openMenu('main')">
+        <ion-icon name="menu" color="myColor"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Home Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let post of articles" style="box-shadow: 0px 11px 20px -3px rgba(142, 136, 146, 0.75);">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://avatars1.githubusercontent.com/u/33656801?s=460&v=4">
+      </ion-avatar>
+      <h2 class="sticky">{{post.author}}</h2>
+      <p>{{post.create_date}}</p>
+    </ion-item>
+    <img src="https://i.hizliresim.com/bV7lP8.jpg" (click)="imageTapped(post)">
+    <ion-card-title text-center>
+      <p>{{post.title}}</p>
+    </ion-card-title>
+    <ion-card-content>
+      <p>{{post.body}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button color="myColor" clear small icon-left (click)="like(post)">
+          <ion-icon name='thumbs-up'></ion-icon>
+          {{likee}} Likes
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+
+
+</ion-content>
+
+

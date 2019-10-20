@@ -1,0 +1,279 @@
+page-group-chat-room {
+
+  .innerMessage {
+    display: inline-block;
+    padding: 5px 10px;
+    background: color($colors, 'primary');
+    margin: 5px;
+    color: white;
+    border-radius: 3px;
+  }
+  .innerMessage.messageRight {
+    background: color($colors, 'secondary');
+  }
+  .username {
+    font-weight: bold;
+    font-size: 80%;
+  }
+  .message {
+    font-size: 120%;
+  }
+  .elem button {
+    border-radius: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .elem {
+    position: relative;
+    min-width: 50px;
+  }
+  div#footer div.elem:first-child {
+    flex-grow: 1;
+  }
+  div#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  ion-input{
+    padding-left: 15px;
+    font-size: 125%;
+  }
+  ion-toolbar {
+    margin: 0;
+    padding: 0!important;
+  }
+  .message:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .messageLeft {
+    float: left;
+  }
+  .messageRight {
+    float: right;
+  }
+
+  .message.special .innerMessage .messageContent{
+    background: white;
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  .message.special .innerMessage:before{
+    content: '';
+    height: 2px;
+    background: #eee;
+    display: block;
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .message.special .innerMessage{
+    background: transparent;
+    color: black;
+    font-size: 80%;
+    width: 100%;
+    float: none;
+    text-align: center;
+    position: relative;
+  }
+
+
+
+  .messages-page-navbar {
+    .chat-picture {
+      width: 50px;
+      border-radius: 50%;
+      float: left;
+    }
+
+    .chat-title {
+      float: left;
+    }
+
+
+    .attach-button{
+      float: left;
+    }
+  }
+
+
+
+  .messages-page-content {
+    > .scroll-content {
+      margin: 42px -16px 42px !important;
+    }
+
+    .day-wrapper .day-timestamp {
+      margin-left: calc(50% - 64px);
+      margin-right: calc(50% - 64px);
+      margin-bottom: 9px;
+      text-align: center;
+      line-height: 27px;
+      height: 27px;
+      border-radius: 3px;
+      color: gray;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+      background: #d9effa;
+    }
+
+    .messages {
+      height: 100%;
+      background-image: url(https://i.pinimg.com/originals/75/70/c1/7570c17b4b27f23847b4f0d3c324caf4.jpg);
+      background-color: #E0DAD6;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .message-wrapper {
+      margin-bottom: 9px;
+
+      &::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    .message {
+      display: inline-block;
+      position: relative;
+      max-width: 65vh;
+      border-radius: 7px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+
+
+
+      &.message-other::before, &.message-mine::before {
+        content: "";
+        position: absolute;
+        bottom: 3px;
+        width: 12px;
+        height: 19px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .message-content {
+        padding: 5px 7px;
+        word-wrap: break-word;
+
+        &::after {
+          content: " \00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+          display: inline;
+        }
+      }
+
+      .message-timestamp {
+        position: absolute;
+        bottom: 2px;
+        right: 7px;
+        font-size: 12px;
+        color: gray;
+      }
+    }
+  }
+
+
+
+  .time{
+    font-size: 12px;
+    color: gray;
+
+  }
+
+
+  .message-mine {
+    float: right;
+    background: color($colors, danger) !important;
+    color: #000000 !important;
+    border-radius: 10px;
+
+
+  }
+
+  .message-other {
+    float: left;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 10px;
+
+
+  }
+
+
+  .messages-page-footer {
+    padding-right: 0;
+
+    .message-editor {
+      margin-left: 2px;
+      padding-left: 5px;
+      background: white;
+      border-radius: 5px;
+
+    }
+
+    .message-editor-button {
+      box-shadow: none;
+      width: 50px;
+      height: 50px;
+      font-size: 17px;
+      margin: auto;
+    }
+  }
+
+
+  .test:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 8px 0;
+    border-color: #ffffff transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    bottom: -11%;
+    left: 93.5%;
+    -webkit-transform: skew(50deg, 0deg);
+  }
+
+
+  .test2:before{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 8px 0;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    bottom: -10%;
+    left: 0px;
+    -webkit-transform: skew(-50deg, 0deg);
+  }
+
+
+  .button-ios {
+    border-radius: 4px;
+    height: 2.8em;
+    left: 13px;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #ffffff;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+  }
+
+
+}

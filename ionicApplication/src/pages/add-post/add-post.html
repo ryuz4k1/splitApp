@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="myColor">
+    <ion-buttons start left>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Add Post</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addPost()">
+        <ion-icon name="checkmark" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+
+
+  <div>
+    <ion-label position="fixed"><h3>Title : </h3></ion-label>
+    <ion-input no-margin no-padding class="info-text" [(ngModel)]="title"></ion-input>
+    <hr class="custom-hr" color="gray">
+  </div>
+
+  <br>
+
+  <div no-border>
+    <ion-label position="fixed"><h3>Body : </h3></ion-label>
+    <ion-textarea [(ngModel)]="body" class="textKutu"></ion-textarea>
+  </div>
+
+  <br>
+
+
+  <h3 padding [hidden]="lastImage !== null">Upload photo in your article</h3>
+
+  <ion-buttons padding>
+    <button ion-button icon-left color="myColor" (click)="presentActionSheet()">
+      <ion-icon name="camera"></ion-icon>Upload Image
+    </button>
+  </ion-buttons>
+
+</ion-content>

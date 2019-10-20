@@ -1,0 +1,19 @@
+
+<ion-header>
+
+  <ion-navbar color="side_right">
+    <ion-title>Kisileri Listele Sayfasi</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h2 style="color: #AE19FF">Uygulamadaki Kişiler</h2>
+
+  <ion-list *ngFor="let i of this.myData">
+    <h2>{{i}}</h2>
+  </ion-list>
+
+</ion-content>

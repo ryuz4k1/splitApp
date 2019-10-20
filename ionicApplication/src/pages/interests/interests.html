@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title color="myColor">Interests Page</ion-title>
+    <ion-buttons end (click)="tamamla()">
+      <button ion-button color="myColor">
+        Finish
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <div *ngFor="let interest of interests">
+    <ion-card *ngIf="!interest.interest_select" (click)="get_selected(interest.id)">
+      <img src={{interest.photo}}/>
+      <div class="card-title">{{interest.name}}</div>
+    </ion-card>
+
+    <ion-card class="selected_card" *ngIf="interest.interest_select" (click)="get_selected(interest.id)">
+      <img src={{interest.photo}}/>
+      <div class="card-title">{{interest.name}}</div>
+      <div class="card-subtitle"><ion-icon name="checkmark"></ion-icon></div>
+    </ion-card>
+  </div>
+
+
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

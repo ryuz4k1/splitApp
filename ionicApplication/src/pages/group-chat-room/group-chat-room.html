@@ -1,0 +1,47 @@
+
+
+
+<ion-header>
+  <ion-navbar color="myColor" class="messages-page-navbar">
+    <img class="chat-picture" src="{{this.group_chat_photo}}">
+
+
+    <div>
+      <ion-title class="chat-title">{{this.group_chat_name}}</ion-title>
+    </div>
+
+    <ion-buttons end>
+      <button ion-button icon-only class="attach-button"><ion-icon name="attach"></ion-icon></button>
+      <button ion-button icon-only class="options-button"><ion-icon name="more"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <div id="chatMessages">
+    <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
+      <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        <div class="username">{{ message.username }}</div>
+        <div class="messageContent">{{ message.message }}</div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar color="myColor" class="messages-page-footer" position="bottom">
+    <ion-input [(ngModel)]="message" class="message-editor" placeholder="Bir mesaj yaz"></ion-input>
+
+    <ion-buttons end>
+      <button ion-button icon-only class="message-editor-button" (click)="sendMessage()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

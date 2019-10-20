@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dark Chat</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  </head>
+  <body id="bod" style="background-color: #000000; color: white; background-image: url(http://www.resimag.com/p1/7e28cf51d4.jpeg);">
+  <div id="panel">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>DARKCHAT</h3>
+        <p> 
+        <ul id="messages" class="list-group">
+           <li id="deger"></li>
+        </ul></p>
+        <p>      
+        <form action="" id="frm">  
+      <div class="col-md-9">
+        <input id="m" autocomplete="off" class="form-control" />
+        </div>
+        <div class="col-md-3">
+        <button id="ds"  class="btn btn-success">Send</button>
+        </div>
+      </form></p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+    <div id="giris">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+      <h3>DARKCHAT GİRİŞ</h3>
+      <p>      
+          <input type="text" name="name" id="ginput"><button onclick="giris()">Giriş</button>
+      </p>
+      <p>Chat için bir kullanıcı adı giriniz</p>
+    </div>
+    </div>
+    </div>
+    </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+
+  var ginput = document.getElementById("giris");
+  var panel = document.getElementById("panel");
+  var bod = document.getElementById("bod");
+
+  ginput.style.visibility = 'visible';
+  panel.style.visibility = 'hidden';
+
+  function giris () {
+    var gelen = document.getElementById("ginput");
+    var cikti = document.getElementById("deger");
+
+    cikti.innerHTML = gelen.value;
+
+
+    panel.style.visibility = 'visible';
+
+    ginput.style.visibility = 'hidden';
+
+    //bod.removeChild(ginput);
+
+  }
+
+  $(function () {
+    var socket = io();
+    $('form').submit(function(){
+      var gelen = document.getElementById("ginput").value;
+      socket.emit('chat message', $('#m').val() , gelen);
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function(msg){
+     /* var gelen = document.getElementById("ginput").value;
+      var  giris = msg + " " + "(" + gelen + ")"; */
+      $('#messages').append($('<li class="list-group-item" style="font-size:20px;color:#000000;">').text(msg));
+    });
+    socket.on('chat connect', function(con){
+      $('#messages').append($('<li class="list-group-item" style="font-size:20px;background-color:green;color:white;">').text(con));
+    });
+    socket.on('chat disconnect', function(con){
+      $('#messages').append($('<li class="list-group-item" style="font-size:20px;background-color:red;color:white;">').text(con));
+    });
+  });
+</script>
+      
+    
+  </body>
+</html>

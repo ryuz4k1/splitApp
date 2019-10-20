@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>NewMessagePage</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list no-lines>
+      <ion-list-header>
+        <p>Following <ion-badge color="myColor">10</ion-badge></p>
+      </ion-list-header>
+      <ion-item *ngFor="let i of all_users.users">
+        <button ion-item detail-none (click)="goChatRoom(i.name,i.id)">{{i.name}}</button>
+      </ion-item>
+
+    </ion-list>
+  </ion-list>
+  
+</ion-content>

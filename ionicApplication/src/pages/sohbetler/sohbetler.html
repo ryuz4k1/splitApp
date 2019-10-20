@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only color="myColor" (click)="openMenu('main')">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chat Region</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="myColor" (click)="goSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <ion-toolbar>
+    <ion-segment  [(ngModel)]="msg" color="myColor">
+      <ion-segment-button value="ozel">
+        Special Message
+      </ion-segment-button>
+      <ion-segment-button value="kanal">
+        Common Groups
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+
+
+  <ion-list  [ngSwitch]="msg" no-lines>
+
+    <ion-list *ngSwitchCase="'ozel'" no-lines>
+      <div *ngFor="let card of chatViewProvider.cards">
+        <ion-row>
+          <ion-col col-10>
+            <button ion-item detail-none (click)="goChatRoom(card.name)">
+              <ion-row>
+                <ion-col col-2>
+                  <ion-avatar>
+                    <img style="border-radius: 50%;!important;"  src="https://avatars0.githubusercontent.com/u/33656801?s=400&u=bea3678e3a38e22fd29317a00c92c97038e894ac&v=4">
+                  </ion-avatar>
+                </ion-col>
+                <ion-col col-9 style="border-bottom: 0.55px solid #c8c7cc; margin-bottom: 10px; margin-left: 15px;">
+                  <ion-row>
+                    <ion-col col-10>
+                      <h2 style="font-weight: 500; color: black;">{{card.name}}</h2>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-8>
+                      <p>Comment Here</p>
+                    </ion-col>
+                    <ion-col col-3>
+                      <p>{{card.date}}</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </button>
+          </ion-col>
+          <ion-col col-2>
+            <button color="danger" clear ion-button icon-only (click)="chatViewProvider.removeCards(card)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+
+
+
+
+
+
+    <ion-list *ngSwitchCase="'kanal'">
+
+      <ion-list>
+        <button ion-item  detail-none *ngFor="let i of chat_group" (click)="goChatRoom2(i.id,i.kanal,i.photo)">
+          <ion-row>
+            <ion-col col-2>
+              <ion-avatar>
+                <img style="border-radius: 50%;!important;" src="{{i.photo}}" >
+                <!--<img style="border-radius: 50%;!important;"  src="https://i.pinimg.com/originals/23/fa/e9/23fae92c553cb9907827ba5ec8556c27.jpg">-->
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-9 style="border-bottom: 0.55px solid #c8c7cc; margin-bottom: 10px; margin-left: 15px;">
+                <ion-row>
+                  <ion-col col-10>
+                    <h2 style="font-weight: 500; color: black;">{{i.kanal}}</h2>
+                  </ion-col>
+                  <ion-col col-2>
+                    <ion-badge color="myColor">2</ion-badge>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-8>
+                    <p>Comment Here</p>
+                  </ion-col>
+                  <ion-col col-3>
+                    <p>{{today}}</p>
+                  </ion-col>
+                </ion-row>
+            </ion-col>
+          </ion-row>
+        </button>
+      </ion-list>
+    </ion-list>
+  </ion-list>
+
+
+  <ion-fab right bottom>
+    <button ion-fab color="myColor" (click)="goNewMessagePage()"><ion-icon name="create"></ion-icon></button>
+  </ion-fab>
+
+
+
+
+
+
+</ion-content>

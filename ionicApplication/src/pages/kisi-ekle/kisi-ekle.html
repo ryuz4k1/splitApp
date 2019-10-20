@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar color="myColor">
+    <ion-title>Register with your face!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-item>
+    <ion-input type="text" id="inputum" placeholder="Username" [(ngModel)]="name" ></ion-input>
+  </ion-item>
+
+
+
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+  <h3 padding [hidden]="lastImage !== null">Take picture and register now!!</h3>
+
+
+  <ion-buttons padding>
+    <button ion-button icon-left color="myColor" (click)="presentActionSheet()">
+      <ion-icon name="camera"></ion-icon>Take Picture
+    </button>
+    <button ion-button icon-left color="myColor" (click)="uploadImage()" [disabled]="lastImage === null">
+      <ion-icon name="cloud-upload"></ion-icon>Upload
+    </button>
+  </ion-buttons>
+
+  <br>
+
+
+
+
+
+</ion-content>

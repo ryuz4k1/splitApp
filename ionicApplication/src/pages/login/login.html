@@ -1,0 +1,102 @@
+
+
+<ion-content padding class="animated fadeIn login auth-page">
+
+  <div class="login-content">
+
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>SPLIT APP</strong>
+      </h2>
+    </div>
+
+  <ion-card box-shadow>
+    <ion-card-content style="background-color: black">
+
+      <ion-segment [(ngModel)]="segment" color="inverse">
+        <ion-segment-button value="login">
+          Login
+        </ion-segment-button>
+        <ion-segment-button value="register">
+          Register
+        </ion-segment-button>
+      </ion-segment>
+
+      <div [ngSwitch]="segment">
+
+        <div *ngSwitchCase="'login'" class="list-form">
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="person" item-start class="text-primary"></ion-icon>
+              Username
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+              Password
+            </ion-label>
+            <ion-input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+
+          <br>
+
+          <div>
+            <button ion-button icon-start block color="myColor" tappable (click)="goToHomePage()">
+              <ion-icon name="log-in"></ion-icon>
+              LOGIN
+            </button>
+
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'register'" class="list-form">
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="person" item-start class="text-primary"></ion-icon>
+              Username
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="regUsername" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+              Email
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="regEmail" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+              Password
+            </ion-label>
+            <ion-input type="password" [(ngModel)]="regPass" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+
+
+          <br>
+
+          <div>
+            <button ion-button icon-start block color="myColor" tappable (click)="goPersonalInfoPage()">
+              <ion-icon name="log-in"></ion-icon>
+              REGISTER
+            </button>
+          </div>
+        </div>
+      </div>
+      <button *ngIf="segment == 'login'" ion-button block clear icon-start color="myWhite" style="background:transparent" (click)="takePicture()"><ion-icon name="camera"></ion-icon>Log in camera </button>
+      <button *ngIf="segment == 'register' " ion-button block clear icon-start color="myWhite" style="background:transparent" (click)="registerFace()"><ion-icon name="camera"></ion-icon>Register with face </button>
+
+    </ion-card-content>
+  </ion-card>
+
+
+  </div>
+
+</ion-content>

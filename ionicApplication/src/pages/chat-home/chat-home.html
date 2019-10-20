@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="myDark">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openMenu('main')">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Join Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-image: url('https://i.pinimg.com/originals/75/70/c1/7570c17b4b27f23847b4f0d3c324caf4.jpg')">
+  <ion-item margin-top="200px" style="border-radius: 15px">
+    <ion-label stacked>Set Nickname</ion-label>
+    <ion-input type="text" [(ngModel)]="nickname" placeholder="Nickname"></ion-input>
+  </ion-item>
+  <button ion-button full round  color="myDark" (click)="joinChat()" [disabled]="nickname === ''">Join Chat as {{ nickname }}</button>
+</ion-content>

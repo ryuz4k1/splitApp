@@ -1,0 +1,51 @@
+
+<ion-menu [content]="content" side="left" id="menu1" menuClose>
+    <ion-content>
+
+        <div class="menu-header">
+            <!--material-design-background-->
+            <img class="user-avatar" [src]="chosenPicture || placeholder" onerror="this.src='https://i.pinimg.com/originals/23/fa/e9/23fae92c553cb9907827ba5ec8556c27.jpg'"
+            />
+            <p class="name">{{this.username}}</p>
+            <p class="e-mail">{{this.status}}</p>
+        </div>
+
+        <ion-list no-lines>
+            <ion-list-header>
+                Menu
+            </ion-list-header>
+            <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+                <ion-icon item-start [name]="p.icon" color="myColor"></ion-icon>
+                {{p.title}}
+            </button>
+        </ion-list>
+
+
+        <ion-list>
+            <ion-list-header>
+                Tutorial
+            </ion-list-header>
+            <button ion-item menuClose (click)="openTutorial()">
+                <ion-icon item-start name="book" color="myColor"></ion-icon>
+                Show Presentation
+            </button>
+        </ion-list>
+
+
+        <ion-list no-lines>
+            <ion-item>
+                <button ion-item (click)="cikisYap()">
+                    <ion-icon item-start name="log-out" color="myColor"></ion-icon>
+                    Oturumu kapat
+                </button>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>
+
+
+
+

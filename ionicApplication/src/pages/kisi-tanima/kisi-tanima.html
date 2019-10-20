@@ -1,0 +1,27 @@
+
+<ion-header>
+
+  <ion-navbar color="side_left">
+    <ion-title>Kisi Tanima Sayfasi</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+  <h3 [hidden]="lastImage !== null">Bir fotoğraf çek</h3>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="side_left">
+    <ion-buttons>
+      <button ion-button icon-left (click)="presentActionSheet()">
+        <ion-icon name="camera"></ion-icon>Resim Çek
+      </button>
+      <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+        <ion-icon name="cloud-upload"></ion-icon>Yükle
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

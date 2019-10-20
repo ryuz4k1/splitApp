@@ -1,0 +1,190 @@
+
+<ion-header>
+  <ion-toolbar color="myDark">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openMenu('main')">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Test Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<br>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h4>Login Form</h4>
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-input type="text" placeholder="Username"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" placeholder="Password"></ion-input>
+          </ion-item>
+        </div>
+
+        <div padding>
+          <button ion-button icon-start block color="myColor" tappable (click)="goToHomePage()">
+            <ion-icon name="log-in"></ion-icon>
+            LOGIN
+          </button>        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!--
+<ion-content>
+
+ <button ion-button (click)="testGeoLocation()">Get Location</button>
+
+
+<button ion-button color="myColor" (click)="findCommon()">find common</button>
+
+
+
+
+
+
+  <ion-list>
+      <ion-item *ngFor="let row of all_users">
+          <h2>{{row.name}}</h2>
+      </ion-item>
+
+      <ion-item *ngIf="all_users.length == 0">
+          <p>Gösterilecek herhangi bir yorum mevcut değil</p>
+      </ion-item>
+
+  </ion-list>
+
+
+
+</ion-content>
+
+-->
+
+
+<!--
+
+<ion-content padding>
+
+  <div id="chatMessages">
+    <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
+      <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        <div class="username">{{ message.username }}</div>
+        <div class="messageContent">{{ message.message }}</div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div id="footer">
+      <div class="elem"><ion-input type="text" [(ngModel)]="message"></ion-input></div>
+      <div class="elem"><button ion-button icon-only (click)="sendMessage()"><ion-icon name="send"></ion-icon> </button></div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<ion-content>
+  <ion-item>
+    <ion-input type="text" id="inputum" placeholder="Username" [(ngModel)]="username" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" id="inputum2" placeholder="Password" [(ngModel)]="password" ></ion-input>
+  </ion-item>
+
+
+  <button ion-button color="secondary" (click)="gonder()">Gonder</button>
+
+</ion-content>
+
+
+-->
+
+
+
+<!--
+<ion-content>
+
+  <button ion-button color="secondary" (click)="kisiListele()">Fetch Data</button>
+  <button ion-button color="primary" (click)="kisiListele2()">Fetch Data2</button>
+
+
+
+  <ion-list *ngFor="let i of myData">
+    <ion-title>
+      {{i}}
+    </ion-title>
+  </ion-list>
+
+</ion-content>
+
+-->
+
+
+<!--
+<ion-content padding class="card-background-page">
+
+
+  <button ion-button full (click)="takePhoto()" >
+    <ion-icon name="camera"></ion-icon>Take Photo
+  </button>
+
+  <ion-col col-6 *ngFor="let photo of photos; let id = index">
+    <ion-card class="block">
+      <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+      <img [src]="photo" *ngIf="photo" />
+    </ion-card>
+  </ion-col>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 >
+        <ion-card class="block">
+          <ion-icon  name="trash" class="deleteIcon"></ion-icon>
+          <img src="someimage.png" />
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+-->

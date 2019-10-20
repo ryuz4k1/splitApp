@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-navbar color="myColor">
+    <ion-buttons start left>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="updateProfile()">
+        <ion-icon name="checkmark" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content margin-top="10px">
+
+  <div text-center>
+    <img [src]="user_data.profile_img ? user_data.profile_img : placeholderPicture" class="edit-avatar" alt="">
+    <p (click)="updateProfileImage()" class="change-text">Change Photo</p>
+  </div>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="clipboard" color="gray"></ion-icon>
+    </ion-label>
+    <ion-input type="text" [value]="name" placeholder="Name" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="globe" color="gray"></ion-icon>
+    </ion-label>
+    <ion-input type="text" [value]="website" placeholder="Website" [(ngModel)]="website"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="laptop" color="gray"></ion-icon>
+    </ion-label>
+    <ion-input type="text" [value]="job" placeholder="Job" [(ngModel)]="job"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="quote" color="gray"></ion-icon>
+    </ion-label>
+    <ion-textarea placeholder="" [value]="about" placeholder="About" [(ngModel)]="about"></ion-textarea>
+  </ion-item>
+
+  <div margin padding-top>
+    <h4 no-margin no-padding class="info-text">Private Information</h4>
+    <hr class="custom-hr" color="gray">
+  </div>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="mail" color="gray"></ion-icon>
+    </ion-label>
+    <ion-input type="text" [value]="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="phone-portrait" color="gray"></ion-icon>
+    </ion-label>
+    <ion-input type="text" [value]="phone" placeholder="Add your phone" [(ngModel)]="phone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon name="transgender" color="gray"></ion-icon>
+    </ion-label>
+    <ion-select class="custom-select" [(ngModel)]="gender">
+      <ion-option value="male">Male</ion-option>
+      <ion-option value="female">Female</ion-option>
+      <ion-option value="none">Not Specified</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <br><br>
+
+</ion-content>
