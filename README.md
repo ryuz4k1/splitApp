@@ -13,6 +13,7 @@ This project is taking 3 parts. The first part is database connection, the secon
 
 
 ### Requirements
+```
 * Ionic and Cordova
   - Ionic Framework    : ionic-angular 3.9.3
   - @ionic/cli-utils: 1.9.2
@@ -29,6 +30,7 @@ This project is taking 3 parts. The first part is database connection, the secon
 
 * Python : 3.7.1
   - Flask micro framework : 1.0.2
+```
 
 
 ### Prerequisites
