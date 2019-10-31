@@ -11,6 +11,26 @@ perspective.
 
 This project is taking 3 parts. The first part is database connection, the second part is backend services (api install) and the last part is client side.
 
+
+### Requirements
+* Ionic and Cordova
+  - Ionic Framework    : ionic-angular 3.9.3
+  - @ionic/cli-utils: 1.9.2
+  - @ionic/app-scripts : 3.2.1
+  - ionic (Ionic CLI) : 3.9.2
+  - Cordova CLI : 8.1.2 (cordova-lib@8.1.1) 
+  - Cordova Platforms  : android 6.3.0 browser 5.0.4
+
+* System:
+  - ios-deploy : 1.9.2 
+  - Node       : v10.15.1
+  - npm        : 6.4.1 
+  - OS         : macOS High Sierra
+
+* Python : 3.7.1
+  - Flask micro framework : 1.0.2
+
+
 ### Prerequisites
 #### Mysql Connection (Database side)
 You need to install mysql to run the project in local environment.
@@ -34,42 +54,14 @@ pip install requests
 pip install base64
 ```
 
-@ionic/cli-utils: 1.9.2
-ionic (Ionic CLI) : 3.9.2
-Cordova CLI : 8.1.2 (cordova-lib@8.1.1) 
-@ionic/app-scripts : 3.2.1
-Cordova Platforms  : android 6.3.0 browser 5.0.4
-Ionic Framework    : ionic-angular 3.9.3
+#### Client Side (Ionic Application)
 
-System:
-	ios-deploy : 1.9.2 
-   	Node       : v10.15.1
-    	npm        : 6.4.1 
-          OS         : macOS High Sierra
-Python : 3.7.1
-Flask micro framework : 1.0.2
+Since this application is based on node js, first you need to download nodejs [from here](https://nodejs.org/en/download/)
 
-```
-Give examples
-```
+Use [this link](https://ionicframework.com/docs/installation/cli) to download the ionic framework.
 
-### Installing
+And finally you need to install cordova, to get your application build. Use [this link](https://cordova.apache.org/#getstarted) to download Cordova.
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
