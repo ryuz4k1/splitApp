@@ -15,10 +15,24 @@ This project is taking 3 parts. The first part is database connection, the secon
 #### Mysql Connection (Database side)
 You need to install mysql to run the project in local environment.
 
-Go MySQL site then download [MySQL for MAC](https://dev.mysql.com/downloads/mysql/)
+Go MySQL website then download [MySQL for MAC](https://dev.mysql.com/downloads/mysql/)
 
 #### Back-end Services (API)
+All back-end services are written in python. At first you need to download python.
 
+Go Python website then download [Python for MAC](https://www.python.org/downloads/mac-osx/)
+
+We have installed python, but we need to install some packages as well. You need to go to [this link](https://github.com/ageitgey/face_recognition#requirements) for face recognition system package.
+
+For the remaining packages you can download the following steps to your computer with pip package manager.
+
+```
+pip install -U Flask
+pip install flask-mysql
+pip install passlib
+pip install requests
+pip install base64
+```
 
 @ionic/cli-utils: 1.9.2
 ionic (Ionic CLI) : 3.9.2
