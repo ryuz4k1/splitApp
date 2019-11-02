@@ -63,3 +63,44 @@ Since this application is based on node js, first you need to download nodejs [f
 Use [this link](https://ionicframework.com/docs/installation/cli) to download the ionic framework.
 
 And finally you need to install cordova, to get your application build. Use [this link](https://cordova.apache.org/#getstarted) to download Cordova.
+
+
+## Running locally
+
+Before you start make sure you have database, client side(ionic and cordova) and the back-end services for face recognition and other installed locally. You can find out how to do that here.
+
+### Step 1 - Github
+   * Clone this repository.
+   
+### Step 2 - Database Configuration
+  * First and most important thing is. You need to run MySQL locally with this command;
+    >  sudo /etc/init.d/mysql start
+
+  * Dump sql file on your local database. You need to create a database which name is   "helloworld". Type in terminal console; 
+    > CREATE DATABASE helloworld (dbname);
+
+    > USE helloworld;
+
+* Then dump helloworld.sql file in your local database with this command;
+     > mysql -u username -p database_name < helloworld.sql (path to sql file)
+
+
+### Step 3 - Back-end Services
+   * Go to api folder and run api.py on terminal. 
+    Run python3 api.py. 
+    You will see the terminal console Running on http://localhost:5000. 
+
+
+## Built With
+
+* [Python](https://www.python.org/downloads/mac-osx/) - Programming language
+* [Ionic Framework](https://ionicframework.com/docs/installation/cli) - Mobile Application Framework
+* [Flask](https://rometools.github.io/rome/) - The web (api) framework.
+* [NodeJS](https://nodejs.org/en/download/) - Runtime enviroment
+
+
+## Author
+
+* **Murat Özer** - *Initial work* - [Murat Özer](https://ryuz4k1.github.io/murat-ozer/)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
